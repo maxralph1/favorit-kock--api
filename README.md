@@ -8,20 +8,18 @@ Guide to (usage and description of) the Favorit-Kock application.
 2. [Features of the Application](#features-of-the-application)
 3. [Technical Features of the Application](#technical-features-of-the-application)
 4. [Technologies Utilized in Crafting Favorit-Kock](#technologies-utilized-in-crafting-favorit-kock)
-      1. [Server-side](#server-side)
-      2. [Client-side](#client-side)
 5. [API Documentation](#api-documentation)
 6. [Database Structure](#database-structure)
 7. [How to Install and Run the Favorit-Kock Application Locally On Your Device](#how-to-install-and-run-the-favorit-kock-application-locally-on-your-device)
       1. [Requirements](#requirements)
       2. [Installation Procedure](#installation-procedure)
-         1. [Server-side Terminal](#server-side-terminal)
-         2. [Client-side Terminal](#client-side-terminal)
 8. [Footnotes !important](#footnotes-important)
 
 ## What Is Favorit-Kock?
 
-Favorit-Kock is a restaurant/bar food ordering and delivery application where users can order (pay online for) food and have it delivered to their doorsteps; administrators can add events to be booked. (gif image showing working application comes here)
+Favorit-Kock is a restaurant/bar food ordering and delivery application where users can order (pay online for) food and have it delivered to their doorsteps; administrators can add events to be booked.
+
+The complete (server-side and client-side) application can be seen on [Favorit Kock GitHub link](https://github.com/maxralph1/favorit-kock)
 
 ## Features of the application
 
@@ -38,35 +36,45 @@ Favorit-Kock is a restaurant/bar food ordering and delivery application where us
 2. Authorization (multiple roles)
 3. Access tokens
 4. Soft-delete function so that data is never really lost (all deleted data can be retrieved/re-activated)
-5. Image upload to the cloud (cloudinary)
-6. All incoming requests are validated multiple times on both client side and server-side.
-7. API requests rate-limiting to prevent attacks.
-8. Other security measures in place to prevent attacks.
-9. Multiple error handlers (for both planned and unplanned errors) to catch all errors properly.
-10. Plus much more...
+5. Laravel Pint for code uniformity and consistency
+6. Accessors
+7. Scopes
+8. API Resources for custom JSON responses
+9. Observers
+10. Custom Middleware
+11. Eager-loading
+12. Customized Exception Handlers (a security step for masking the actual model names on the server from API consumers on the client)
+13. All incoming requests are validated multiple times on both client side and server-side.
+14. API requests rate-limiting to prevent attacks.
+15. Other security measures in place to prevent attacks.
+16. Multiple error handlers (for both planned and unplanned errors) to catch all errors properly.
+
+Plus much more...
 
 ## Technologies Utilized in Crafting Favorit-Kock
 
 Favorit-Kock is crafted in the following programming languages/frameworks and technologies:
 
-### **Server-side:**
-
 1. **Laravel (PHP)** on the server-side.
-      1. **Laravel Tests** (for writing comprehensive tests for the application)2. **MYSQL** (for database).
-
-### **Client-side:**
-
-1. **React.JS (JavaScript)** library on the client-side.
-2. **Bootstrap5** for styling.
-3. Vanilla **CSS3** for custom styling.
+      1. **Laravel Tests** (for writing comprehensive tests for the application)
+2. **MYSQL** (for database).
+3. **Cloudinary** for image uploads.
+4. **Scribe** for local API documentation.
+5. **Postman** for online API documentation.
 
 ## API Documentation
 
-Here is a link to the API documentation:(link to the API documentation comes here)
+Here are links to the API documentation. You may wish to view the online version if you do not want to install and run the application locally on your device:
+
+Online version: https://documenter.getpostman.com/view/13239911/2s93zFXz3G
+
+Offline version: http://localhost/docs
+
+("localhost" here stands for your local development environment port. Laravel by default runs on localhost:8000. So you would typically view the docs on http://localhost:8000/docs unless you decided to run on a port you set by yourself)
 
 ## Database Structure
 
-(image for the database structure here)
+![](./favorit_kock_database_schema.png)
 
 ## How to Install and Run the Favorit-Kock Application Locally On Your Device
 
@@ -106,23 +114,13 @@ git clone git@github.com:maxralph1/favorit-kock.git
 cd favorit-kock
 ```
 
-At this point, you must have 2 terminals running side-by-side (server-side (to run the server side code) and client-side (to consume the server-side API)).
-
-#### Server-side Terminal
-
-1. On the first terminal, change directory into the server file
-
-```
-cd server
-```
-
-2. From here, use the command below to install all dependencies I utilized in this application as can be seen from my 'server/composer.json' file
+4. From here, use the command below to install all dependencies I utilized in this application as can be seen from my 'server/composer.json' file
 
 ```
 composer install
 ```
 
-3. Spin up the server with the command:
+5. Spin up the server with the command:
 
 ```
 php artisan serve
@@ -130,37 +128,15 @@ php artisan serve
 
 Your server traditionally starts on port 8000 (http://localhost:8000), if you have nothing currently running this port.
 
-4. Go to the 'server/.env' file which you must have gotten from modifying the 'server/env.example' file and make sure the database name is what you want it to be.
+6. Go to the 'server/.env' file which you must have gotten from modifying the 'server/env.example' file and make sure the database name is what you want it to be.
 
-5. You should already have a MySQL database installed and running. Create a database instance with same name as that for the database above. I use XAMPP (you can [get XAMPP here](https://www.apachefriends.org/download.html)). It makes it easier for me.
+7. You should already have a MySQL database installed and running. Create a database instance with same name as that for the database above. I use XAMPP (you can [get XAMPP here](https://www.apachefriends.org/download.html)). It makes it easier for me.
 
-6. Go back to your server terminal and run the command to migrate and seed your database:
+8. Go back to your server terminal and run the command to migrate and seed your database:
 
 ```
 php artisan migrate --seed
 ```
-
-#### Client-side Terminal
-
-1. On the second terminal, change directory into the server file
-
-```
-cd client
-```
-
-2. Use the command below to install all dependencies I utilized in this application as can be seen from my 'client/package.json' file
-
-```
-npm i
-```
-
-3. Spin up the client-side (front-end) to consume the back-end API using the following command:
-
-```
-npm run dev
-```
-
-Your application should be up on http://localhost:5173/ if you have nothing previously running on the port. Check your terminal to confirm the actual port.
 
 ## Footnotes !important
 
