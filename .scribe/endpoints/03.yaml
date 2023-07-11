@@ -1,0 +1,708 @@
+name: 'Rider endpoints'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/rider/deliveries
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Deliveries'
+      description: 'Returns paginated list of deliveries.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'Page number.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/rider/deliveries/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Delivery'
+      description: 'Returns a Delivery record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the delivery.'
+        required: true
+        example: 01h3hkgz1aajbz5r5t77x6rny4
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgz1aajbz5r5t77x6rny4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Record not found."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/rider/deliveries/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'DELETE Delivery'
+      description: 'Deletes Delivery record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the delivery.'
+        required: true
+        example: 01h3hkgz1aajbz5r5t77x6rny4
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgz1aajbz5r5t77x6rny4
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/rider/user-addresses
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET User Addresses'
+      description: 'Returns paginated list of user addresses.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'Page number.'
+        required: false
+        example: 1
+        type: integer
+        custom: []
+    cleanQueryParameters:
+      page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/rider/user-addresses
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST User Address'
+      description: 'Creates a new User Address record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+      house_number:
+        name: house_number
+        description: 'Must not be greater than 25 characters.'
+        required: true
+        example: jormcorsuilpnvy
+        type: string
+        custom: []
+      street:
+        name: street
+        description: 'Must not be greater than 75 characters.'
+        required: true
+        example: jjir
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Must not be greater than 75 characters.'
+        required: true
+        example: uucbd
+        type: string
+        custom: []
+      post_code:
+        name: post_code
+        description: 'Must not be greater than 25 characters.'
+        required: true
+        example: qyonnu
+        type: string
+        custom: []
+      state:
+        name: state
+        description: 'Must not be greater than 75 characters.'
+        required: true
+        example: ymghdxrhkvevbjbrofqges
+        type: string
+        custom: []
+      landmark:
+        name: landmark
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: uppzmsbekoyqopaabivj
+        type: string
+        custom: []
+      default:
+        name: default
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      user_id: est
+      house_number: jormcorsuilpnvy
+      street: jjir
+      city: uucbd
+      post_code: qyonnu
+      state: ymghdxrhkvevbjbrofqges
+      landmark: uppzmsbekoyqopaabivj
+      default: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/rider/user-addresses/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET User Address'
+      description: 'Returns an User Address record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user address.'
+        required: true
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgy9ag250nwcyjtvd6mtr
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Record not found."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/rider/user-addresses/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PUT User Address'
+      description: 'Updates User Address record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user address.'
+        required: true
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgy9ag250nwcyjtvd6mtr
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      house_number:
+        name: house_number
+        description: 'Must not be greater than 25 characters.'
+        required: false
+        example: otkxlslhlabkfzfqed
+        type: string
+        custom: []
+      street:
+        name: street
+        description: 'Must not be greater than 75 characters.'
+        required: false
+        example: optpykxjmhznklunn
+        type: string
+        custom: []
+      city:
+        name: city
+        description: 'Must not be greater than 75 characters.'
+        required: false
+        example: wzehdxspwdpme
+        type: string
+        custom: []
+      post_code:
+        name: post_code
+        description: 'Must not be greater than 25 characters.'
+        required: false
+        example: kfvztrskmqheyyeuoaias
+        type: string
+        custom: []
+      state:
+        name: state
+        description: 'Must not be greater than 75 characters.'
+        required: false
+        example: vdgwhwikcmfkvwxyumdvmbro
+        type: string
+        custom: []
+      landmark:
+        name: landmark
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: jlcxmvrzkjxhzsop
+        type: string
+        custom: []
+      default:
+        name: default
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      house_number: otkxlslhlabkfzfqed
+      street: optpykxjmhznklunn
+      city: wzehdxspwdpme
+      post_code: kfvztrskmqheyyeuoaias
+      state: vdgwhwikcmfkvwxyumdvmbro
+      landmark: jlcxmvrzkjxhzsop
+      default: false
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/rider/user-addresses/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'DELETE User Address'
+      description: 'Deletes User Address record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user address.'
+        required: true
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgy9ag250nwcyjtvd6mtr
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/rider/user-images
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST User Image'
+      description: 'Creates a new User Image record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: true
+        example: illo
+        type: string
+        custom: []
+      image_url:
+        name: image_url
+        description: ''
+        required: true
+        example: quae
+        type: string
+        custom: []
+      default:
+        name: default
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      user_id: illo
+      image_url: quae
+      default: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/rider/user-images/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET User Image'
+      description: 'Returns a User Image record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user image.'
+        required: true
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgybezjhm8hcxrgn7z48v
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: '{"message":"Record not found."}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/rider/user-images/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PUT User Image'
+      description: 'Updates User Image record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user image.'
+        required: true
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgybezjhm8hcxrgn7z48v
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      image_url:
+        name: image_url
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      default:
+        name: default
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    cleanBodyParameters:
+      default: true
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/rider/user-images/{id}'
+    metadata:
+      groupName: 'Rider endpoints'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'DELETE User Image'
+      description: 'Deletes User Image record.'
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user image.'
+        required: true
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: 01h3hkgybezjhm8hcxrgn7z48v
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

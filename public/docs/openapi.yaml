@@ -1,0 +1,4264 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/super-admin/categories:
+    get:
+      summary: 'GET Categories'
+      operationId: gETCategories
+      description: 'Returns paginated list of categories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Category'
+      operationId: pOSTCategory
+      description: 'Creates a new Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The title field is required.","errors":{"title":["The title field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: wdtfzoyxmhkjcnbkvuhs
+                description:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'Est sequi quaerat et nulla officia voluptatem.'
+              required:
+                - title
+                - description
+  '/api/v1/super-admin/categories/{id}':
+    get:
+      summary: 'GET Category'
+      operationId: gETCategory
+      description: 'Returns a Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Category'
+      operationId: pUTCategory
+      description: 'Updates Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: gokokkyshkmumgserwhhraul
+                description:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'Ipsum dolore repellendus et sit.'
+    delete:
+      summary: 'DELETE Category'
+      operationId: dELETECategory
+      description: 'Deletes Category record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 01h3hkgycyk98aqfs483p8evcy
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/deliveries:
+    get:
+      summary: 'GET Deliveries'
+      operationId: gETDeliveries
+      description: 'Returns paginated list of deliveries.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Delivery'
+      operationId: pOSTDelivery
+      description: 'Creates a new Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The order_id field is required.","errors":{"order_id":["The order_id field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                user_id:
+                  type: string
+                  description: ''
+                  example: earum
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                time_delivered:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - order_id
+                - user_id
+  '/api/v1/super-admin/deliveries/{id}':
+    get:
+      summary: 'GET Delivery'
+      operationId: gETDelivery
+      description: 'Returns a Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Delivery'
+      operationId: pUTDelivery
+      description: 'Updates Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                time_delivered:
+                  type: string
+                  description: ''
+                  example: null
+    delete:
+      summary: 'DELETE Delivery'
+      operationId: dELETEDelivery
+      description: 'Deletes Delivery record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delivery.'
+        example: 01h3hkgz1aajbz5r5t77x6rny4
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/meals:
+    get:
+      summary: 'GET Meals'
+      operationId: gETMeals
+      description: 'Returns paginated list of meals.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Meal'
+      operationId: pOSTMeal
+      description: 'Creates a new Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The title field is required.","errors":{"title":["The title field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category_id:
+                  type: string
+                  description: ''
+                  example: culpa
+                title:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: wlmwbeycvckrr
+                description:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'Voluptatibus occaecati molestiae voluptates sit eos ut.'
+                price:
+                  type: number
+                  description: ''
+                  example: 310581.16
+                active:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - category_id
+                - title
+                - description
+                - price
+  '/api/v1/super-admin/meals/{id}':
+    get:
+      summary: 'GET Meal'
+      operationId: gETMeal
+      description: 'Returns a Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Meal'
+      operationId: pUTMeal
+      description: 'Updates Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category_id:
+                  type: string
+                  description: ''
+                  example: null
+                title:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: d
+                description:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'Occaecati architecto qui dolores.'
+                price:
+                  type: number
+                  description: ''
+                  example: 6736651.857367
+                active:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE Meal'
+      operationId: dELETEMeal
+      description: 'Deletes Meal record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal.'
+        example: 01h3hkgyhwvmvf4abd5hpj9p3x
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/meal-images:
+    get:
+      summary: 'GET Meal Images'
+      operationId: gETMealImages
+      description: 'Returns paginated list of meal images.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","meal":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}},"default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Meal Images'
+      operationId: pOSTMealImages
+      description: 'Creates a new Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The title field is required.","errors":{"title":["The title field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: quis
+                image_url:
+                  type: string
+                  description: ''
+                  example: qui
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - meal_id
+                - image_url
+  '/api/v1/super-admin/meal-images/{id}':
+    get:
+      summary: 'GET Meal Image'
+      operationId: gETMealImage
+      description: 'Returns a Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Meal Image'
+      operationId: pUTMealImage
+      description: 'Updates Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE Meal Image'
+      operationId: dELETEMealImage
+      description: 'Deletes Meal Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal image.'
+        example: 01h3hkgynf5ce39m90b3h33vr5
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/meal-inventories:
+    get:
+      summary: 'GET Meal Inventories'
+      operationId: gETMealInventories
+      description: 'Returns paginated list of meal inventories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Meal Inventory'
+      operationId: pOSTMealInventory
+      description: 'Creates a new Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: molestias
+                plates_prepared:
+                  type: number
+                  description: ''
+                  example: 3.930354
+                available:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - meal_id
+                - plates_prepared
+  '/api/v1/super-admin/meal-inventories/{id}':
+    get:
+      summary: 'GET Meal Inventory'
+      operationId: gETMealInventory
+      description: 'Returns a Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Meal Inventory'
+      operationId: pUTMealInventory
+      description: 'Updates Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                plates_prepared:
+                  type: number
+                  description: ''
+                  example: 2186156.0
+                available:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE Meal Inventory'
+      operationId: dELETEMealInventory
+      description: 'Deletes Meal Inventory record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal inventory.'
+        example: 01h3hkgyqn5d0fsm19nsyg2gxy
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/orders:
+    get:
+      summary: 'GET Orders'
+      operationId: gETOrders
+      description: 'Returns paginated list of orders.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Order'
+      operationId: pOSTOrder
+      description: 'Creates a new Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: aperiam
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: true
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 5.4717718
+                paid:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+  '/api/v1/super-admin/orders/{id}':
+    get:
+      summary: 'GET Order'
+      operationId: gETOrder
+      description: 'Returns an Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Order'
+      operationId: pUTOrder
+      description: 'Updates Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: false
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 3.98407
+                paid:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE Order'
+      operationId: dELETEOrder
+      description: 'Deletes Order record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order.'
+        example: 01h3hkgysrj71pqm6dwfve5ay0
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/order-items:
+    get:
+      summary: 'GET Order Items'
+      operationId: gETOrderItems
+      description: 'Returns paginated list of order items.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Order Item'
+      operationId: pOSTOrderItem
+      description: 'Creates a new Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: nam
+                order_id:
+                  type: string
+                  description: ''
+                  example: qui
+                user_id:
+                  type: string
+                  description: ''
+                  example: doloribus
+                amount_due:
+                  type: number
+                  description: ''
+                  example: 1.1752
+                quantity_ordered:
+                  type: number
+                  description: ''
+                  example: 0.109517
+              required:
+                - meal_id
+                - order_id
+                - user_id
+                - amount_due
+                - quantity_ordered
+  '/api/v1/super-admin/order-items/{id}':
+    get:
+      summary: 'GET Order Item'
+      operationId: gETOrderItem
+      description: 'Returns an Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Order Item'
+      operationId: pUTOrderItem
+      description: 'Updates Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                order_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                amount_due:
+                  type: number
+                  description: ''
+                  example: 29544.62988
+                quantity_ordered:
+                  type: number
+                  description: ''
+                  example: 78.693301821
+    delete:
+      summary: 'DELETE Order Item'
+      operationId: dELETEOrderItem
+      description: 'Deletes Order Item record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order item.'
+        example: 01h3hkgyygdrnkttkwkbh5sa1t
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/users:
+    get:
+      summary: 'GET Users'
+      operationId: gETUsers
+      description: 'Returns paginated list of users.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","username":"testuser1","name":"Test User","email":"test@testuser.com","user_image":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"},"user_addresses":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST User'
+      operationId: pOSTUser
+      description: 'Creates a new User record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","username":"testuser1","name":"Test User","email":"test@testuser.com","user_image":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"},"user_addresses":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The name field is required.","errors":{"name":["The name field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+  '/api/v1/super-admin/users/{id}':
+    get:
+      summary: 'GET User'
+      operationId: gETUser
+      description: 'Returns a User record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","username":"testuser1","name":"Test User","email":"test@testuser.com","user_image":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"},"user_addresses":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT User'
+      operationId: pUTUser
+      description: 'Updates User record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","username":"testuser1","name":"Test User","email":"test@testuser.com","user_image":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"},"user_addresses":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}}, ...}'
+      tags:
+        - 'Admin endpoints'
+    delete:
+      summary: 'DELETE User'
+      operationId: dELETEUser
+      description: 'Deletes User record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 01h3hkgxrwda7ryextav733edm
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/user-addresses:
+    get:
+      summary: 'GET User Addresses'
+      operationId: gETUserAddresses
+      description: 'Returns paginated list of user addresses.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST User Address'
+      operationId: pOSTUserAddress
+      description: 'Creates a new User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: at
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: zxoatgwpzukhsphigghcdjn
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: rtisbwugutxljlawvrcjreuwq
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: bembfsohzil
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: fnysefizyjujlvuhcrwv
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: uhuzv
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tymvwmmilmptnjspevnn
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - user_id
+                - house_number
+                - street
+                - city
+                - post_code
+                - state
+                - landmark
+  '/api/v1/super-admin/user-addresses/{id}':
+    get:
+      summary: 'GET User Address'
+      operationId: gETUserAddress
+      description: 'Returns an User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT User Address'
+      operationId: pUTUserAddress
+      description: 'Updates User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: vpssgy
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: m
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: ssrlzqgwtnzglmzqewh
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: hkpazfwqe
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: agrfnluyexoxfyip
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bgaogaqw
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE User Address'
+      operationId: dELETEUserAddress
+      description: 'Deletes User Address record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user address.'
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        required: true
+        schema:
+          type: string
+  /api/v1/super-admin/user-images:
+    get:
+      summary: 'GET User Images'
+      operationId: gETUserImages
+      description: 'Returns paginated list of user images.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST User Image'
+      operationId: pOSTUserImage
+      description: 'Creates a new User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: quae
+                image_url:
+                  type: string
+                  description: ''
+                  example: quibusdam
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+                - image_url
+  '/api/v1/super-admin/user-images/{id}':
+    get:
+      summary: 'GET User Image'
+      operationId: gETUserImage
+      description: 'Returns a User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT User Image'
+      operationId: pUTUserImage
+      description: 'Updates User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE User Image'
+      operationId: dELETEUserImage
+      description: 'Deletes User Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user image.'
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/categories:
+    get:
+      summary: 'GET Categories'
+      operationId: gETCategories
+      description: 'Returns paginated list of categories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+      tags:
+        - 'Admin endpoints'
+  '/api/v1/admin/categories/{id}':
+    get:
+      summary: 'GET Category'
+      operationId: gETCategory
+      description: 'Returns a Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 01h3hkgycyk98aqfs483p8evcy
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/deliveries:
+    get:
+      summary: 'GET Deliveries'
+      operationId: gETDeliveries
+      description: 'Returns paginated list of deliveries.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Delivery'
+      operationId: pOSTDelivery
+      description: 'Creates a new Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The order_id field is required.","errors":{"order_id":["The order_id field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: string
+                  description: ''
+                  example: nobis
+                user_id:
+                  type: string
+                  description: ''
+                  example: maxime
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                time_delivered:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - order_id
+                - user_id
+  '/api/v1/admin/deliveries/{id}':
+    get:
+      summary: 'GET Delivery'
+      operationId: gETDelivery
+      description: 'Returns a Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Delivery'
+      operationId: pUTDelivery
+      description: 'Updates Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                order_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                time_delivered:
+                  type: string
+                  description: ''
+                  example: null
+    delete:
+      summary: 'DELETE Delivery'
+      operationId: dELETEDelivery
+      description: 'Deletes Delivery record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delivery.'
+        example: 01h3hkgz1aajbz5r5t77x6rny4
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/meals:
+    get:
+      summary: 'GET Meals'
+      operationId: gETMeals
+      description: 'Returns paginated list of meals.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Admin endpoints'
+  '/api/v1/admin/meals/{id}':
+    get:
+      summary: 'GET Meal'
+      operationId: gETMeal
+      description: 'Returns a Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal.'
+        example: 01h3hkgyhwvmvf4abd5hpj9p3x
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/meal-images:
+    get:
+      summary: 'GET Meal Images'
+      operationId: gETMealImages
+      description: 'Returns paginated list of meal images.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","meal":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}},"default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Meal Images'
+      operationId: pOSTMealImages
+      description: 'Creates a new Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        422:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"message":"The title field is required.","errors":{"title":["The title field is required."]}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: incidunt
+                image_url:
+                  type: string
+                  description: ''
+                  example: et
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - meal_id
+                - image_url
+  '/api/v1/admin/meal-images/{id}':
+    get:
+      summary: 'GET Meal Image'
+      operationId: gETMealImage
+      description: 'Returns a Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Meal Image'
+      operationId: pUTMealImage
+      description: 'Updates Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE Meal Image'
+      operationId: dELETEMealImage
+      description: 'Deletes Meal Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal image.'
+        example: 01h3hkgynf5ce39m90b3h33vr5
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/meal-inventories:
+    get:
+      summary: 'GET Meal Inventories'
+      operationId: gETMealInventories
+      description: 'Returns paginated list of meal inventories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Meal Inventory'
+      operationId: pOSTMealInventory
+      description: 'Creates a new Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: inventore
+                plates_prepared:
+                  type: number
+                  description: ''
+                  example: 180894098.94643
+                available:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - meal_id
+                - plates_prepared
+  '/api/v1/admin/meal-inventories/{id}':
+    get:
+      summary: 'GET Meal Inventory'
+      operationId: gETMealInventory
+      description: 'Returns a Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Meal Inventory'
+      operationId: pUTMealInventory
+      description: 'Updates Meal Inventory record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","plates_prepared":64,"active":null}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                plates_prepared:
+                  type: number
+                  description: ''
+                  example: 5995638.1374876
+                available:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE Meal Inventory'
+      operationId: dELETEMealInventory
+      description: 'Deletes Meal Inventory record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal inventory.'
+        example: 01h3hkgyqn5d0fsm19nsyg2gxy
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/orders:
+    get:
+      summary: 'GET Orders'
+      operationId: gETOrders
+      description: 'Returns paginated list of orders.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Order'
+      operationId: pOSTOrder
+      description: 'Creates a new Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: sit
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: true
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 7321.31
+                paid:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - user_id
+  '/api/v1/admin/orders/{id}':
+    get:
+      summary: 'GET Order'
+      operationId: gETOrder
+      description: 'Returns an Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT Order'
+      operationId: pUTOrder
+      description: 'Updates Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: false
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: false
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 45475414.1
+                paid:
+                  type: boolean
+                  description: ''
+                  example: true
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order.'
+        example: 01h3hkgysrj71pqm6dwfve5ay0
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/order-items:
+    get:
+      summary: 'GET Order Items'
+      operationId: gETOrderItems
+      description: 'Returns paginated list of order items.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST Order Item'
+      operationId: pOSTOrderItem
+      description: 'Creates a new Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: temporibus
+                order_id:
+                  type: string
+                  description: ''
+                  example: et
+                user_id:
+                  type: string
+                  description: ''
+                  example: quia
+                amount_due:
+                  type: number
+                  description: ''
+                  example: 2.86783011
+                quantity_ordered:
+                  type: number
+                  description: ''
+                  example: 5.648446097
+              required:
+                - meal_id
+                - order_id
+                - user_id
+                - amount_due
+                - quantity_ordered
+  '/api/v1/admin/order-items/{id}':
+    get:
+      summary: 'GET Order Item'
+      operationId: gETOrderItem
+      description: 'Returns an Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order item.'
+        example: 01h3hkgyygdrnkttkwkbh5sa1t
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/user-addresses:
+    get:
+      summary: 'GET User Addresses'
+      operationId: gETUserAddresses
+      description: 'Returns paginated list of user addresses.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST User Address'
+      operationId: pOSTUserAddress
+      description: 'Creates a new User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: unde
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: kqwziyxctslek
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: gcvds
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: lylsuemolnmxpqzxmb
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: owoxvmktnvurvbe
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: aqskmhuaxmulhairzqit
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: tcudjatm
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+                - house_number
+                - street
+                - city
+                - post_code
+                - state
+                - landmark
+  '/api/v1/admin/user-addresses/{id}':
+    get:
+      summary: 'GET User Address'
+      operationId: gETUserAddress
+      description: 'Returns an User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT User Address'
+      operationId: pUTUserAddress
+      description: 'Updates User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: mjkaf
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: kic
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: jrz
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: orkhmowfekudhqv
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: g
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: aolwwccuej
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE User Address'
+      operationId: dELETEUserAddress
+      description: 'Deletes User Address record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user address.'
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        required: true
+        schema:
+          type: string
+  /api/v1/admin/user-images:
+    get:
+      summary: 'GET User Images'
+      operationId: gETUserImages
+      description: 'Returns paginated list of user images.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+    post:
+      summary: 'POST User Image'
+      operationId: pOSTUserImage
+      description: 'Creates a new User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: non
+                image_url:
+                  type: string
+                  description: ''
+                  example: asperiores
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - user_id
+                - image_url
+  '/api/v1/admin/user-images/{id}':
+    get:
+      summary: 'GET User Image'
+      operationId: gETUserImage
+      description: 'Returns a User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    put:
+      summary: 'PUT User Image'
+      operationId: pUTUserImage
+      description: 'Updates User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Admin endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE User Image'
+      operationId: dELETEUserImage
+      description: 'Deletes User Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user image.'
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        required: true
+        schema:
+          type: string
+  /api/v1/user/meal-images:
+    get:
+      summary: 'GET Meal Images'
+      operationId: gETMealImages
+      description: 'Returns paginated list of meal images.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","meal":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}},"default":1}, ...}'
+      tags:
+        - 'Admin endpoints'
+  '/api/v1/user/meal-images/{id}':
+    get:
+      summary: 'GET Meal Image'
+      operationId: gETMealImage
+      description: 'Returns a Meal Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{"id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Admin endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal image.'
+        example: 01h3hkgynf5ce39m90b3h33vr5
+        required: true
+        schema:
+          type: string
+  /api/v1/register:
+    post:
+      summary: 'POST Register'
+      operationId: pOSTRegister
+      description: 'Register with an existing user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  access_token: 1|HvglYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA2oISo
+                  name: 'John Snow'
+                  role: 4
+                properties:
+                  access_token:
+                    type: string
+                    example: 1|HvglYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA2oISo
+                  name:
+                    type: string
+                    example: 'John Snow'
+                  role:
+                    type: integer
+                    example: 4
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'The provided credentials are incorrect.'
+                properties:
+                  error:
+                    type: string
+                    example: 'The provided credentials are incorrect.'
+      tags:
+        - 'Auth endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ozrsgfkg
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: yalnwrcvkupwpjcujvupq
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: uward@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: soluta
+              required:
+                - username
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/login:
+    post:
+      summary: 'POST Login'
+      operationId: pOSTLogin
+      description: 'Login with an existing user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  access_token: 1|HvglYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA2oISo
+                  name: 'John Snow'
+                  role: 4
+                properties:
+                  access_token:
+                    type: string
+                    example: 1|HvglYzIrLURVGx6Xe41HKj1CrNsxRxe4pLA2oISo
+                  name:
+                    type: string
+                    example: 'John Snow'
+                  role:
+                    type: integer
+                    example: 4
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'The provided credentials are incorrect.'
+                properties:
+                  error:
+                    type: string
+                    example: 'The provided credentials are incorrect.'
+      tags:
+        - 'Auth endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'Must contain only letters and numbers.'
+                  example: 2q6tcz8
+                password:
+                  type: string
+                  description: ''
+                  example: facere
+              required:
+                - username
+                - password
+      security: []
+  /api/v1/password-reset:
+    put:
+      summary: 'PUT Reset Password'
+      operationId: pUTResetPassword
+      description: 'Reset Password of an existing user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: 'Your password has been updated.'
+                properties:
+                  success:
+                    type: string
+                    example: 'Your password has been updated.'
+      tags:
+        - 'Auth endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+                  example: sunt
+                password:
+                  type: string
+                  description: ''
+                  example: accusamus
+              required:
+                - current_password
+                - password
+  /api/v1/logout:
+    post:
+      summary: 'POST Logout'
+      operationId: pOSTLogout
+      description: 'Logout authenticated user.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Auth endpoints'
+  /api/v1/categories:
+    get:
+      summary: 'GET Categories'
+      operationId: gETCategories
+      description: 'Returns paginated list of categories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+      tags:
+        - 'Public endpoints'
+      security: []
+  '/api/v1/categories/{id}':
+    get:
+      summary: 'GET Category'
+      operationId: gETCategory
+      description: 'Returns a Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Public endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 01h3hkgycyk98aqfs483p8evcy
+        required: true
+        schema:
+          type: string
+  /api/v1/meals:
+    get:
+      summary: 'GET Meals'
+      operationId: gETMeals
+      description: 'Returns paginated list of meals.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'Public endpoints'
+      security: []
+  '/api/v1/meals/{id}':
+    get:
+      summary: 'GET Meal'
+      operationId: gETMeal
+      description: 'Returns a Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Public endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal.'
+        example: 01h3hkgyhwvmvf4abd5hpj9p3x
+        required: true
+        schema:
+          type: string
+  /api/v1/rider/deliveries:
+    get:
+      summary: 'GET Deliveries'
+      operationId: gETDeliveries
+      description: 'Returns paginated list of deliveries.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+      tags:
+        - 'Rider endpoints'
+  '/api/v1/rider/deliveries/{id}':
+    get:
+      summary: 'GET Delivery'
+      operationId: gETDelivery
+      description: 'Returns a Delivery record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","delivered":1,"time_delivered":"2007-03-15 16:07:24"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Rider endpoints'
+    delete:
+      summary: 'DELETE Delivery'
+      operationId: dELETEDelivery
+      description: 'Deletes Delivery record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Rider endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delivery.'
+        example: 01h3hkgz1aajbz5r5t77x6rny4
+        required: true
+        schema:
+          type: string
+  /api/v1/rider/user-addresses:
+    get:
+      summary: 'GET User Addresses'
+      operationId: gETUserAddresses
+      description: 'Returns paginated list of user addresses.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Rider endpoints'
+    post:
+      summary: 'POST User Address'
+      operationId: pOSTUserAddress
+      description: 'Creates a new User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'Rider endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: est
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: jormcorsuilpnvy
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: jjir
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: uucbd
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: qyonnu
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: ymghdxrhkvevbjbrofqges
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: uppzmsbekoyqopaabivj
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+                - house_number
+                - street
+                - city
+                - post_code
+                - state
+                - landmark
+  '/api/v1/rider/user-addresses/{id}':
+    get:
+      summary: 'GET User Address'
+      operationId: gETUserAddress
+      description: 'Returns an User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Rider endpoints'
+    put:
+      summary: 'PUT User Address'
+      operationId: pUTUserAddress
+      description: 'Updates User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'Rider endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: otkxlslhlabkfzfqed
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: optpykxjmhznklunn
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: wzehdxspwdpme
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: kfvztrskmqheyyeuoaias
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: vdgwhwikcmfkvwxyumdvmbro
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: jlcxmvrzkjxhzsop
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE User Address'
+      operationId: dELETEUserAddress
+      description: 'Deletes User Address record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Rider endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user address.'
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        required: true
+        schema:
+          type: string
+  /api/v1/rider/user-images:
+    post:
+      summary: 'POST User Image'
+      operationId: pOSTUserImage
+      description: 'Creates a new User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Rider endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: illo
+                image_url:
+                  type: string
+                  description: ''
+                  example: quae
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+                - image_url
+  '/api/v1/rider/user-images/{id}':
+    get:
+      summary: 'GET User Image'
+      operationId: gETUserImage
+      description: 'Returns a User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'Rider endpoints'
+    put:
+      summary: 'PUT User Image'
+      operationId: pUTUserImage
+      description: 'Updates User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'Rider endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE User Image'
+      operationId: dELETEUserImage
+      description: 'Deletes User Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'Rider endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user image.'
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        required: true
+        schema:
+          type: string
+  /api/v1/user/categories:
+    get:
+      summary: 'GET Categories'
+      operationId: gETCategories
+      description: 'Returns paginated list of categories.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+      tags:
+        - 'User endpoints'
+  '/api/v1/user/categories/{id}':
+    get:
+      summary: 'GET Category'
+      operationId: gETCategory
+      description: 'Returns a Category record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First category","description":"This is the first category"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 01h3hkgycyk98aqfs483p8evcy
+        required: true
+        schema:
+          type: string
+  /api/v1/user/meals:
+    get:
+      summary: 'GET Meals'
+      operationId: gETMeals
+      description: 'Returns paginated list of meals.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+      tags:
+        - 'User endpoints'
+  '/api/v1/user/meals/{id}':
+    get:
+      summary: 'GET Meal'
+      operationId: gETMeal
+      description: 'Returns a Meal record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","title":"First meal","description":"This is the first meal","price":"20.00","active":1,"category":{''id":"","title":"First meal","description":"This is the first meal"}}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal.'
+        example: 01h3hkgyhwvmvf4abd5hpj9p3x
+        required: true
+        schema:
+          type: string
+  /api/v1/user/orders:
+    get:
+      summary: 'GET Orders'
+      operationId: gETOrders
+      description: 'Returns paginated list of orders.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'User endpoints'
+    post:
+      summary: 'POST Order'
+      operationId: pOSTOrder
+      description: 'Creates a new Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: ut
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: false
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: true
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 88917418.6276
+                paid:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+  '/api/v1/user/orders/{id}':
+    get:
+      summary: 'GET Order'
+      operationId: gETOrder
+      description: 'Returns an Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    put:
+      summary: 'PUT Order'
+      operationId: pUTOrder
+      description: 'Updates Order record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","order_annuled":0,"delivered":0,"total_amount":50,"paid":0,"delivered_by":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                order_annuled:
+                  type: boolean
+                  description: ''
+                  example: true
+                delivered:
+                  type: boolean
+                  description: ''
+                  example: false
+                total_amount:
+                  type: number
+                  description: ''
+                  example: 2175.82
+                paid:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE Order'
+      operationId: dELETEOrder
+      description: 'Deletes Order record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order.'
+        example: 01h3hkgysrj71pqm6dwfve5ay0
+        required: true
+        schema:
+          type: string
+  /api/v1/user/order-items:
+    get:
+      summary: 'GET Order Items'
+      operationId: gETOrderItems
+      description: 'Returns paginated list of order items.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'User endpoints'
+    post:
+      summary: 'POST Order Item'
+      operationId: pOSTOrderItem
+      description: 'Creates a new Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: id
+                order_id:
+                  type: string
+                  description: ''
+                  example: maxime
+                user_id:
+                  type: string
+                  description: ''
+                  example: accusantium
+                amount_due:
+                  type: number
+                  description: ''
+                  example: 2.0
+                quantity_ordered:
+                  type: number
+                  description: ''
+                  example: 172.052011
+              required:
+                - meal_id
+                - order_id
+                - user_id
+                - amount_due
+                - quantity_ordered
+  '/api/v1/user/order-items/{id}':
+    get:
+      summary: 'GET Order Item'
+      operationId: gETOrderItem
+      description: 'Returns an Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    put:
+      summary: 'PUT Order Item'
+      operationId: pUTOrderItem
+      description: 'Updates Order Item record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meal_id:
+                  type: string
+                  description: ''
+                  example: null
+                order_id:
+                  type: string
+                  description: ''
+                  example: null
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                amount_due:
+                  type: number
+                  description: ''
+                  example: 115.71698203
+                quantity_ordered:
+                  type: number
+                  description: ''
+                  example: 18.38
+    delete:
+      summary: 'DELETE Order Item'
+      operationId: dELETEOrderItem
+      description: 'Deletes Order Item record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order item.'
+        example: 01h3hkgyygdrnkttkwkbh5sa1t
+        required: true
+        schema:
+          type: string
+  /api/v1/user/user-addresses:
+    get:
+      summary: 'GET User Addresses'
+      operationId: gETUserAddresses
+      description: 'Returns paginated list of user addresses.'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number.'
+          example: 1
+          required: false
+          schema:
+            type: integer
+            description: 'Page number.'
+            example: 1
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'User endpoints'
+    post:
+      summary: 'POST User Address'
+      operationId: pOSTUserAddress
+      description: 'Creates a new User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: voluptate
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: yedlxsvd
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: atqbzmmyuonx
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: h
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: svjdfutxd
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: jbthbczuq
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: lzukynrwhqwrxbh
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - user_id
+                - house_number
+                - street
+                - city
+                - post_code
+                - state
+                - landmark
+  '/api/v1/user/user-addresses/{id}':
+    get:
+      summary: 'GET User Address'
+      operationId: gETUserAddress
+      description: 'Returns an User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","house_number":0,"street":"Thomson Street","city":"New York","post_code":12345,"state":"New York STate","landmark":"On the mango tree","default":1}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    put:
+      summary: 'PUT User Address'
+      operationId: pUTUserAddress
+      description: 'Updates User Address record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                house_number:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: giuuqddbqjmuqbrqzjyv
+                street:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: w
+                city:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: nvuiyy
+                post_code:
+                  type: string
+                  description: 'Must not be greater than 25 characters.'
+                  example: rzwdgtlhgdwtlsthsfxy
+                state:
+                  type: string
+                  description: 'Must not be greater than 75 characters.'
+                  example: rqbbaqtynsxy
+                landmark:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: nd
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+    delete:
+      summary: 'DELETE User Address'
+      operationId: dELETEUserAddress
+      description: 'Deletes User Address record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user address.'
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        required: true
+        schema:
+          type: string
+  '/api/v1/user/user-addresses/{user_address_id}/make-default':
+    patch:
+      summary: 'PATCH User Address'
+      operationId: pATCHUserAddress
+      description: 'Makes User Address record default.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","meal_id":"01h3hkhxrh15atksjr11hrck0d","order_id":"01h3hkhxrh15atksjr11hrck0d","user_id":"01h3hkhxrh15atksjr11hrck0d","amount_due":55,"quantity_ordered":5}, ...}'
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: user_address_id
+        description: 'The ID of the user address.'
+        example: 01h3hkgy9ag250nwcyjtvd6mtr
+        required: true
+        schema:
+          type: string
+  /api/v1/user/user-images:
+    post:
+      summary: 'POST User Image'
+      operationId: pOSTUserImage
+      description: 'Creates a new User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: et
+                image_url:
+                  type: string
+                  description: ''
+                  example: modi
+                default:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - user_id
+                - image_url
+  '/api/v1/user/user-images/{id}':
+    get:
+      summary: 'GET User Image'
+      operationId: gETUserImage
+      description: 'Returns a User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Record not found.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Record not found.'
+      tags:
+        - 'User endpoints'
+    put:
+      summary: 'PUT User Image'
+      operationId: pUTUserImage
+      description: 'Updates User Image record.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{"data":{"id":"01h3hkhxrh15atksjr11hrck0d","image_url":"https://via.placeholder.com/133x422.png/00dd55?tex...","user_id":"01h3hkhxrh15atksjr11hrck0d"}, ...}'
+      tags:
+        - 'User endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: ''
+                  example: null
+                image_url:
+                  type: string
+                  description: ''
+                  example: null
+                default:
+                  type: boolean
+                  description: ''
+                  example: true
+    delete:
+      summary: 'DELETE User Image'
+      operationId: dELETEUserImage
+      description: 'Deletes User Image record.'
+      parameters: []
+      responses:
+        204:
+          description: ''
+      tags:
+        - 'User endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user image.'
+        example: 01h3hkgybezjhm8hcxrgn7z48v
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: 'Admin endpoints'
+    description: ''
+  -
+    name: 'Auth endpoints'
+    description: ''
+  -
+    name: 'Public endpoints'
+    description: ''
+  -
+    name: 'Rider endpoints'
+    description: ''
+  -
+    name: 'User endpoints'
+    description: ''
