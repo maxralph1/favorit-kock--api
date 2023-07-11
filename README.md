@@ -66,7 +66,7 @@ Favorit-Kock is crafted in the following programming languages/frameworks and te
 
 Here are links to the API documentation. You may wish to view the online version if you do not want to install and run the application locally on your device:
 
-Online version: https://documenter.getpostman.com/view/13239911/2s93zFXz3G
+Online version: https://documenter.getpostman.com/view/13239911/2s946bCabf
 
 Offline version: http://localhost/docs
 

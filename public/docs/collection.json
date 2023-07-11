@@ -10,8 +10,8 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "3052b771-1c3c-4ba8-bede-9a8f472c11e4",
-        "description": "",
+        "_postman_id": "f723943d-8336-4cbe-a022-b018dabe198c",
+        "description": "This is the Documentation to the Favorit-Kock API. <br \/><br \/> Hier ist die Dokumentation f\u00fcr Favorit-Kock-API.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
@@ -80,7 +80,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"wdtfzoyxmhkjcnbkvuhs\",\"description\":\"Est sequi quaerat et nulla officia voluptatem.\"}"
+                            "raw": "{\"title\":\"eunzniawkgho\",\"description\":\"Enim ab laboriosam aperiam rerum distinctio et.\"}"
                         },
                         "description": "Creates a new Category record."
                     },
@@ -175,7 +175,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"gokokkyshkmumgserwhhraul\",\"description\":\"Ipsum dolore repellendus et sit.\"}"
+                            "raw": "{\"title\":\"zhkfcvo\",\"description\":\"Autem hic sed et sint vel qui.\"}"
                         },
                         "description": "Updates Category record."
                     },
@@ -289,7 +289,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"voluptatem\",\"user_id\":\"earum\",\"delivered\":true}"
+                            "raw": "{\"order_id\":\"maiores\",\"user_id\":\"est\",\"delivered\":false}"
                         },
                         "description": "Creates a new Delivery record."
                     },
@@ -384,7 +384,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"delivered\":true}"
+                            "raw": "{\"delivered\":false}"
                         },
                         "description": "Updates Delivery record."
                     },
@@ -498,7 +498,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"category_id\":\"culpa\",\"title\":\"wlmwbeycvckrr\",\"description\":\"Voluptatibus occaecati molestiae voluptates sit eos ut.\",\"price\":310581.16,\"active\":false}"
+                            "raw": "{\"category_id\":\"velit\",\"title\":\"cywmhq\",\"description\":\"Dolore reiciendis sed corrupti sed debitis.\",\"price\":7.165823361,\"active\":true}"
                         },
                         "description": "Creates a new Meal record."
                     },
@@ -593,7 +593,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"d\",\"description\":\"Occaecati architecto qui dolores.\",\"price\":6736651.857367,\"active\":false}"
+                            "raw": "{\"title\":\"qt\",\"description\":\"Doloremque officiis aut eos eum veniam corrupti inventore.\",\"price\":12503400.379,\"active\":false}"
                         },
                         "description": "Updates Meal record."
                     },
@@ -707,7 +707,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"quis\",\"image_url\":\"qui\",\"default\":true}"
+                            "raw": "{\"meal_id\":\"ducimus\",\"image_url\":\"dolorem\",\"default\":true}"
                         },
                         "description": "Creates a new Meal Image record."
                     },
@@ -916,7 +916,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"molestias\",\"plates_prepared\":3.930354,\"available\":true}"
+                            "raw": "{\"meal_id\":\"cum\",\"plates_prepared\":283281689.169427,\"available\":false}"
                         },
                         "description": "Creates a new Meal Inventory record."
                     },
@@ -1005,7 +1005,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"plates_prepared\":2186156,\"available\":false}"
+                            "raw": "{\"plates_prepared\":860092,\"available\":false}"
                         },
                         "description": "Updates Meal Inventory record."
                     },
@@ -1119,7 +1119,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"aperiam\",\"order_annuled\":true,\"delivered\":true,\"total_amount\":5.4717718,\"paid\":true}"
+                            "raw": "{\"user_id\":\"modi\",\"order_annuled\":false,\"delivered\":true,\"total_amount\":7729.706783228,\"paid\":true}"
                         },
                         "description": "Creates a new Order record."
                     },
@@ -1208,7 +1208,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_annuled\":false,\"delivered\":true,\"total_amount\":3.98407,\"paid\":true}"
+                            "raw": "{\"order_annuled\":false,\"delivered\":false,\"total_amount\":4240075,\"paid\":true}"
                         },
                         "description": "Updates Order record."
                     },
@@ -1322,7 +1322,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"nam\",\"order_id\":\"qui\",\"user_id\":\"doloribus\",\"amount_due\":1.1752,\"quantity_ordered\":0.109517}"
+                            "raw": "{\"meal_id\":\"aut\",\"order_id\":\"ut\",\"user_id\":\"qui\",\"amount_due\":1429877.51,\"quantity_ordered\":7247378.551712}"
                         },
                         "description": "Creates a new Order Item record."
                     },
@@ -1411,7 +1411,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"amount_due\":29544.62988,\"quantity_ordered\":78.693301821}"
+                            "raw": "{\"amount_due\":1,\"quantity_ordered\":736052}"
                         },
                         "description": "Updates Order Item record."
                     },
@@ -1728,7 +1728,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"at\",\"house_number\":\"zxoatgwpzukhsphigghcdjn\",\"street\":\"rtisbwugutxljlawvrcjreuwq\",\"city\":\"bembfsohzil\",\"post_code\":\"fnysefizyjujlvuhcrwv\",\"state\":\"uhuzv\",\"landmark\":\"tymvwmmilmptnjspevnn\",\"default\":false}"
+                            "raw": "{\"user_id\":\"alias\",\"house_number\":\"sqdarbvaplgiboxrarmgzlj\",\"street\":\"huuilkutdphgqzplebjft\",\"city\":\"zywxwpnjyndfihvngsxddy\",\"post_code\":\"hqxjqrgtoeljpxjekysefym\",\"state\":\"qktptpx\",\"landmark\":\"ejnniiblihlrt\",\"default\":false}"
                         },
                         "description": "Creates a new User Address record."
                     },
@@ -1817,7 +1817,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"house_number\":\"vpssgy\",\"street\":\"m\",\"city\":\"ssrlzqgwtnzglmzqewh\",\"post_code\":\"hkpazfwqe\",\"state\":\"agrfnluyexoxfyip\",\"landmark\":\"bgaogaqw\",\"default\":false}"
+                            "raw": "{\"house_number\":\"ldxcjzeh\",\"street\":\"qebytqvwzmrijmxjx\",\"city\":\"hhbol\",\"post_code\":\"kvijvsgkaryxfwzjgtyvwn\",\"state\":\"zztfpokbykfpruulhc\",\"landmark\":\"octovgmhgtleurqx\",\"default\":true}"
                         },
                         "description": "Updates User Address record."
                     },
@@ -1931,7 +1931,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"quae\",\"image_url\":\"quibusdam\",\"default\":true}"
+                            "raw": "{\"user_id\":\"aut\",\"image_url\":\"alias\",\"default\":true}"
                         },
                         "description": "Creates a new User Image record."
                     },
@@ -2219,7 +2219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_id\":\"nobis\",\"user_id\":\"maxime\",\"delivered\":true}"
+                            "raw": "{\"order_id\":\"sit\",\"user_id\":\"aut\",\"delivered\":true}"
                         },
                         "description": "Creates a new Delivery record."
                     },
@@ -2314,7 +2314,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"delivered\":true}"
+                            "raw": "{\"delivered\":false}"
                         },
                         "description": "Updates Delivery record."
                     },
@@ -2513,7 +2513,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"incidunt\",\"image_url\":\"et\",\"default\":false}"
+                            "raw": "{\"meal_id\":\"qui\",\"image_url\":\"incidunt\",\"default\":true}"
                         },
                         "description": "Creates a new Meal Image record."
                     },
@@ -2608,7 +2608,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"default\":true}"
+                            "raw": "{\"default\":false}"
                         },
                         "description": "Updates Meal Image record."
                     },
@@ -2722,7 +2722,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"inventore\",\"plates_prepared\":180894098.94643,\"available\":true}"
+                            "raw": "{\"meal_id\":\"quidem\",\"plates_prepared\":4.01225,\"available\":false}"
                         },
                         "description": "Creates a new Meal Inventory record."
                     },
@@ -2811,7 +2811,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"plates_prepared\":5995638.13748759,\"available\":true}"
+                            "raw": "{\"plates_prepared\":470883.7,\"available\":true}"
                         },
                         "description": "Updates Meal Inventory record."
                     },
@@ -2925,7 +2925,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"sit\",\"order_annuled\":true,\"delivered\":true,\"total_amount\":7321.31,\"paid\":false}"
+                            "raw": "{\"user_id\":\"quidem\",\"order_annuled\":false,\"delivered\":false,\"total_amount\":349.2,\"paid\":false}"
                         },
                         "description": "Creates a new Order record."
                     },
@@ -3014,7 +3014,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_annuled\":false,\"delivered\":false,\"total_amount\":45475414.1,\"paid\":true}"
+                            "raw": "{\"order_annuled\":true,\"delivered\":false,\"total_amount\":0,\"paid\":false}"
                         },
                         "description": "Updates Order record."
                     },
@@ -3088,7 +3088,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"temporibus\",\"order_id\":\"et\",\"user_id\":\"quia\",\"amount_due\":2.86783011,\"quantity_ordered\":5.648446097}"
+                            "raw": "{\"meal_id\":\"et\",\"order_id\":\"optio\",\"user_id\":\"quas\",\"amount_due\":0,\"quantity_ordered\":1.918230803}"
                         },
                         "description": "Creates a new Order Item record."
                     },
@@ -3208,7 +3208,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"unde\",\"house_number\":\"kqwziyxctslek\",\"street\":\"gcvds\",\"city\":\"lylsuemolnmxpqzxmb\",\"post_code\":\"owoxvmktnvurvbe\",\"state\":\"aqskmhuaxmulhairzqit\",\"landmark\":\"tcudjatm\",\"default\":true}"
+                            "raw": "{\"user_id\":\"modi\",\"house_number\":\"rqwyepuhnbbizg\",\"street\":\"pqmbzhnttqilugw\",\"city\":\"vzxgnoilhsltpizbilg\",\"post_code\":\"guddrmmwvc\",\"state\":\"ohlpymik\",\"landmark\":\"ltixerkxvxc\",\"default\":false}"
                         },
                         "description": "Creates a new User Address record."
                     },
@@ -3297,7 +3297,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"house_number\":\"mjkaf\",\"street\":\"kic\",\"city\":\"jrz\",\"post_code\":\"orkhmowfekudhqv\",\"state\":\"g\",\"landmark\":\"aolwwccuej\",\"default\":true}"
+                            "raw": "{\"house_number\":\"djgzanymw\",\"street\":\"svpriaau\",\"city\":\"oggn\",\"post_code\":\"xhzabczyd\",\"state\":\"mhvhrhxwij\",\"landmark\":\"vstbhcvqiltcuhzuahp\",\"default\":true}"
                         },
                         "description": "Updates User Address record."
                     },
@@ -3411,7 +3411,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"non\",\"image_url\":\"asperiores\",\"default\":false}"
+                            "raw": "{\"user_id\":\"facere\",\"image_url\":\"praesentium\",\"default\":true}"
                         },
                         "description": "Creates a new User Image record."
                     },
@@ -3666,7 +3666,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"ozrsgfkg\",\"name\":\"yalnwrcvkupwpjcujvupq\",\"email\":\"uward@example.com\",\"password\":\"soluta\"}"
+                            "raw": "{\"username\":\"sxjqujyvjf\",\"name\":\"gokudik\",\"email\":\"beer.paris@example.com\",\"password\":\"dolorum\"}"
                         },
                         "description": "Register with an existing user.",
                         "auth": {
@@ -3710,7 +3710,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"2q6tcz8\",\"password\":\"facere\"}"
+                            "raw": "{\"username\":\"7n6xgt4\",\"password\":\"ratione\"}"
                         },
                         "description": "Login with an existing user.",
                         "auth": {
@@ -3754,7 +3754,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_password\":\"sunt\",\"password\":\"accusamus\"}"
+                            "raw": "{\"current_password\":\"quos\",\"password\":\"minima\"}"
                         },
                         "description": "Reset Password of an existing user."
                     },
@@ -4179,7 +4179,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"est\",\"house_number\":\"jormcorsuilpnvy\",\"street\":\"jjir\",\"city\":\"uucbd\",\"post_code\":\"qyonnu\",\"state\":\"ymghdxrhkvevbjbrofqges\",\"landmark\":\"uppzmsbekoyqopaabivj\",\"default\":true}"
+                            "raw": "{\"user_id\":\"illo\",\"house_number\":\"lfnejrtjmkiof\",\"street\":\"hefe\",\"city\":\"tohcjzathbkzaxlzrhwcsj\",\"post_code\":\"tqlsmwmoaxzdoacsdfotyy\",\"state\":\"nthud\",\"landmark\":\"kxfxntmysmwrosayt\",\"default\":false}"
                         },
                         "description": "Creates a new User Address record."
                     },
@@ -4268,7 +4268,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"house_number\":\"otkxlslhlabkfzfqed\",\"street\":\"optpykxjmhznklunn\",\"city\":\"wzehdxspwdpme\",\"post_code\":\"kfvztrskmqheyyeuoaias\",\"state\":\"vdgwhwikcmfkvwxyumdvmbro\",\"landmark\":\"jlcxmvrzkjxhzsop\",\"default\":false}"
+                            "raw": "{\"house_number\":\"kldmfgt\",\"street\":\"k\",\"city\":\"qijfnvwfuiyqkotsh\",\"post_code\":\"jteircguglczcabvwioxeho\",\"state\":\"klxkzaifxizjnkqsmyd\",\"landmark\":\"nktrav\",\"default\":true}"
                         },
                         "description": "Updates User Address record."
                     },
@@ -4343,7 +4343,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"illo\",\"image_url\":\"quae\",\"default\":true}"
+                            "raw": "{\"user_id\":\"et\",\"image_url\":\"possimus\",\"default\":true}"
                         },
                         "description": "Creates a new User Image record."
                     },
@@ -4722,7 +4722,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"ut\",\"order_annuled\":false,\"delivered\":true,\"total_amount\":88917418.6276,\"paid\":true}"
+                            "raw": "{\"user_id\":\"quidem\",\"order_annuled\":false,\"delivered\":true,\"total_amount\":402.341,\"paid\":true}"
                         },
                         "description": "Creates a new Order record."
                     },
@@ -4811,7 +4811,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"order_annuled\":true,\"delivered\":false,\"total_amount\":2175.82,\"paid\":true}"
+                            "raw": "{\"order_annuled\":false,\"delivered\":false,\"total_amount\":60.72569318,\"paid\":false}"
                         },
                         "description": "Updates Order record."
                     },
@@ -4925,7 +4925,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"meal_id\":\"id\",\"order_id\":\"maxime\",\"user_id\":\"accusantium\",\"amount_due\":2,\"quantity_ordered\":172.052011}"
+                            "raw": "{\"meal_id\":\"quaerat\",\"order_id\":\"ut\",\"user_id\":\"temporibus\",\"amount_due\":675.47,\"quantity_ordered\":15}"
                         },
                         "description": "Creates a new Order Item record."
                     },
@@ -5014,7 +5014,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"amount_due\":115.71698203,\"quantity_ordered\":18.38}"
+                            "raw": "{\"amount_due\":1129983.3820182,\"quantity_ordered\":272942869.763}"
                         },
                         "description": "Updates Order Item record."
                     },
@@ -5128,7 +5128,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"voluptate\",\"house_number\":\"yedlxsvd\",\"street\":\"atqbzmmyuonx\",\"city\":\"h\",\"post_code\":\"svjdfutxd\",\"state\":\"jbthbczuq\",\"landmark\":\"lzukynrwhqwrxbh\",\"default\":true}"
+                            "raw": "{\"user_id\":\"repellendus\",\"house_number\":\"arboyiolnrqdoezrmdsw\",\"street\":\"szdfjvgmkfx\",\"city\":\"wmondubiwiv\",\"post_code\":\"ekhxppeikjqyn\",\"state\":\"ei\",\"landmark\":\"gsj\",\"default\":false}"
                         },
                         "description": "Creates a new User Address record."
                     },
@@ -5217,7 +5217,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"house_number\":\"giuuqddbqjmuqbrqzjyv\",\"street\":\"w\",\"city\":\"nvuiyy\",\"post_code\":\"rzwdgtlhgdwtlsthsfxy\",\"state\":\"rqbbaqtynsxy\",\"landmark\":\"nd\",\"default\":false}"
+                            "raw": "{\"house_number\":\"vcqsj\",\"street\":\"mroqusj\",\"city\":\"vmjevpacefufgiqmmo\",\"post_code\":\"hsacerepp\",\"state\":\"cfblmsjjnjriwwfopooenn\",\"landmark\":\"dgkxhossfdrpujqhvavcwtvil\",\"default\":true}"
                         },
                         "description": "Updates User Address record."
                     },
@@ -5332,7 +5332,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":\"et\",\"image_url\":\"modi\",\"default\":false}"
+                            "raw": "{\"user_id\":\"illum\",\"image_url\":\"porro\",\"default\":true}"
                         },
                         "description": "Creates a new User Image record."
                     },
@@ -5421,7 +5421,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"default\":true}"
+                            "raw": "{\"default\":false}"
                         },
                         "description": "Updates User Image record."
                     },

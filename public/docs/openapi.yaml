@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Laravel
-  description: ''
+  description: 'This is the Documentation to the Favorit-Kock API. <br /><br /> Hier ist die Dokumentation für Favorit-Kock-API.'
   version: 1.0.0
 servers:
   -
@@ -65,11 +65,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: wdtfzoyxmhkjcnbkvuhs
+                  example: eunzniawkgho
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: 'Est sequi quaerat et nulla officia voluptatem.'
+                  example: 'Enim ab laboriosam aperiam rerum distinctio et.'
               required:
                 - title
                 - description
@@ -126,11 +126,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: gokokkyshkmumgserwhhraul
+                  example: zhkfcvo
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: 'Ipsum dolore repellendus et sit.'
+                  example: 'Autem hic sed et sint vel qui.'
     delete:
       summary: 'DELETE Category'
       operationId: dELETECategory
@@ -208,15 +208,15 @@ paths:
                 order_id:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: maiores
                 user_id:
                   type: string
                   description: ''
-                  example: earum
+                  example: est
                 delivered:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 time_delivered:
                   type: string
                   description: ''
@@ -285,7 +285,7 @@ paths:
                 delivered:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 time_delivered:
                   type: string
                   description: ''
@@ -367,23 +367,23 @@ paths:
                 category_id:
                   type: string
                   description: ''
-                  example: culpa
+                  example: velit
                 title:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: wlmwbeycvckrr
+                  example: cywmhq
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: 'Voluptatibus occaecati molestiae voluptates sit eos ut.'
+                  example: 'Dolore reiciendis sed corrupti sed debitis.'
                 price:
                   type: number
                   description: ''
-                  example: 310581.16
+                  example: 7.165823361
                 active:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - category_id
                 - title
@@ -446,15 +446,15 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: d
+                  example: qt
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: 'Occaecati architecto qui dolores.'
+                  example: 'Doloremque officiis aut eos eum veniam corrupti inventore.'
                 price:
                   type: number
                   description: ''
-                  example: 6736651.857367
+                  example: 12503400.379
                 active:
                   type: boolean
                   description: ''
@@ -536,11 +536,11 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: quis
+                  example: ducimus
                 image_url:
                   type: string
                   description: ''
-                  example: qui
+                  example: dolorem
                 default:
                   type: boolean
                   description: ''
@@ -680,15 +680,15 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: molestias
+                  example: cum
                 plates_prepared:
                   type: number
                   description: ''
-                  example: 3.930354
+                  example: 283281689.16943
                 available:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - meal_id
                 - plates_prepared
@@ -749,7 +749,7 @@ paths:
                 plates_prepared:
                   type: number
                   description: ''
-                  example: 2186156.0
+                  example: 860092.0
                 available:
                   type: boolean
                   description: ''
@@ -824,11 +824,11 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: aperiam
+                  example: modi
                 order_annuled:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 delivered:
                   type: boolean
                   description: ''
@@ -836,7 +836,7 @@ paths:
                 total_amount:
                   type: number
                   description: ''
-                  example: 5.4717718
+                  example: 7729.706783228
                 paid:
                   type: boolean
                   description: ''
@@ -904,11 +904,11 @@ paths:
                 delivered:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 total_amount:
                   type: number
                   description: ''
-                  example: 3.98407
+                  example: 4240075.0
                 paid:
                   type: boolean
                   description: ''
@@ -983,23 +983,23 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: nam
+                  example: aut
                 order_id:
                   type: string
                   description: ''
-                  example: qui
+                  example: ut
                 user_id:
                   type: string
                   description: ''
-                  example: doloribus
+                  example: qui
                 amount_due:
                   type: number
                   description: ''
-                  example: 1.1752
+                  example: 1429877.51
                 quantity_ordered:
                   type: number
                   description: ''
-                  example: 0.109517
+                  example: 7247378.551712
               required:
                 - meal_id
                 - order_id
@@ -1071,11 +1071,11 @@ paths:
                 amount_due:
                   type: number
                   description: ''
-                  example: 29544.62988
+                  example: 1.0
                 quantity_ordered:
                   type: number
                   description: ''
-                  example: 78.693301821
+                  example: 736052.0
     delete:
       summary: 'DELETE Order Item'
       operationId: dELETEOrderItem
@@ -1256,31 +1256,31 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: at
+                  example: alias
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: zxoatgwpzukhsphigghcdjn
+                  example: sqdarbvaplgiboxrarmgzlj
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: rtisbwugutxljlawvrcjreuwq
+                  example: huuilkutdphgqzplebjft
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: bembfsohzil
+                  example: zywxwpnjyndfihvngsxddy
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: fnysefizyjujlvuhcrwv
+                  example: hqxjqrgtoeljpxjekysefym
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: uhuzv
+                  example: qktptpx
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tymvwmmilmptnjspevnn
+                  example: ejnniiblihlrt
                 default:
                   type: boolean
                   description: ''
@@ -1350,31 +1350,31 @@ paths:
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: vpssgy
+                  example: ldxcjzeh
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: m
+                  example: qebytqvwzmrijmxjx
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: ssrlzqgwtnzglmzqewh
+                  example: hhbol
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: hkpazfwqe
+                  example: kvijvsgkaryxfwzjgtyvwn
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: agrfnluyexoxfyip
+                  example: zztfpokbykfpruulhc
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bgaogaqw
+                  example: octovgmhgtleurqx
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
     delete:
       summary: 'DELETE User Address'
       operationId: dELETEUserAddress
@@ -1445,11 +1445,11 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: quae
+                  example: aut
                 image_url:
                   type: string
                   description: ''
-                  example: quibusdam
+                  example: alias
                 default:
                   type: boolean
                   description: ''
@@ -1659,11 +1659,11 @@ paths:
                 order_id:
                   type: string
                   description: ''
-                  example: nobis
+                  example: sit
                 user_id:
                   type: string
                   description: ''
-                  example: maxime
+                  example: aut
                 delivered:
                   type: boolean
                   description: ''
@@ -1736,7 +1736,7 @@ paths:
                 delivered:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 time_delivered:
                   type: string
                   description: ''
@@ -1881,15 +1881,15 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: incidunt
+                  example: qui
                 image_url:
                   type: string
                   description: ''
-                  example: et
+                  example: incidunt
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - meal_id
                 - image_url
@@ -1954,7 +1954,7 @@ paths:
                 default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
     delete:
       summary: 'DELETE Meal Image'
       operationId: dELETEMealImage
@@ -2025,15 +2025,15 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: inventore
+                  example: quidem
                 plates_prepared:
                   type: number
                   description: ''
-                  example: 180894098.94643
+                  example: 4.01225
                 available:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - meal_id
                 - plates_prepared
@@ -2094,7 +2094,7 @@ paths:
                 plates_prepared:
                   type: number
                   description: ''
-                  example: 5995638.1374876
+                  example: 470883.7
                 available:
                   type: boolean
                   description: ''
@@ -2169,19 +2169,19 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: sit
+                  example: quidem
                 order_annuled:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 delivered:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 total_amount:
                   type: number
                   description: ''
-                  example: 7321.31
+                  example: 349.2
                 paid:
                   type: boolean
                   description: ''
@@ -2245,7 +2245,7 @@ paths:
                 order_annuled:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 delivered:
                   type: boolean
                   description: ''
@@ -2253,11 +2253,11 @@ paths:
                 total_amount:
                   type: number
                   description: ''
-                  example: 45475414.1
+                  example: 0.0
                 paid:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
     parameters:
       -
         in: path
@@ -2318,23 +2318,23 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: temporibus
+                  example: et
                 order_id:
                   type: string
                   description: ''
-                  example: et
+                  example: optio
                 user_id:
                   type: string
                   description: ''
-                  example: quia
+                  example: quas
                 amount_due:
                   type: number
                   description: ''
-                  example: 2.86783011
+                  example: 0.0
                 quantity_ordered:
                   type: number
                   description: ''
-                  example: 5.648446097
+                  example: 1.918230803
               required:
                 - meal_id
                 - order_id
@@ -2429,35 +2429,35 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: unde
+                  example: modi
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: kqwziyxctslek
+                  example: rqwyepuhnbbizg
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: gcvds
+                  example: pqmbzhnttqilugw
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: lylsuemolnmxpqzxmb
+                  example: vzxgnoilhsltpizbilg
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: owoxvmktnvurvbe
+                  example: guddrmmwvc
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: aqskmhuaxmulhairzqit
+                  example: ohlpymik
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: tcudjatm
+                  example: ltixerkxvxc
                 default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - user_id
                 - house_number
@@ -2523,27 +2523,27 @@ paths:
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: mjkaf
+                  example: djgzanymw
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: kic
+                  example: svpriaau
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: jrz
+                  example: oggn
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: orkhmowfekudhqv
+                  example: xhzabczyd
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: g
+                  example: mhvhrhxwij
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: aolwwccuej
+                  example: vstbhcvqiltcuhzuahp
                 default:
                   type: boolean
                   description: ''
@@ -2618,15 +2618,15 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: non
+                  example: facere
                 image_url:
                   type: string
                   description: ''
-                  example: asperiores
+                  example: praesentium
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - user_id
                 - image_url
@@ -2825,19 +2825,19 @@ paths:
                 username:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ozrsgfkg
+                  example: sxjqujyvjf
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yalnwrcvkupwpjcujvupq
+                  example: gokudik
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: uward@example.com
+                  example: beer.paris@example.com
                 password:
                   type: string
                   description: ''
-                  example: soluta
+                  example: dolorum
               required:
                 - username
                 - name
@@ -2895,11 +2895,11 @@ paths:
                 username:
                   type: string
                   description: 'Must contain only letters and numbers.'
-                  example: 2q6tcz8
+                  example: 7n6xgt4
                 password:
                   type: string
                   description: ''
-                  example: facere
+                  example: ratione
               required:
                 - username
                 - password
@@ -2935,11 +2935,11 @@ paths:
                 current_password:
                   type: string
                   description: ''
-                  example: sunt
+                  example: quos
                 password:
                   type: string
                   description: ''
-                  example: accusamus
+                  example: minima
               required:
                 - current_password
                 - password
@@ -3208,35 +3208,35 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: est
+                  example: illo
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: jormcorsuilpnvy
+                  example: lfnejrtjmkiof
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: jjir
+                  example: hefe
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: uucbd
+                  example: tohcjzathbkzaxlzrhwcsj
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: qyonnu
+                  example: tqlsmwmoaxzdoacsdfotyy
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: ymghdxrhkvevbjbrofqges
+                  example: nthud
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: uppzmsbekoyqopaabivj
+                  example: kxfxntmysmwrosayt
                 default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - user_id
                 - house_number
@@ -3302,31 +3302,31 @@ paths:
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: otkxlslhlabkfzfqed
+                  example: kldmfgt
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: optpykxjmhznklunn
+                  example: k
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: wzehdxspwdpme
+                  example: qijfnvwfuiyqkotsh
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: kfvztrskmqheyyeuoaias
+                  example: jteircguglczcabvwioxeho
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: vdgwhwikcmfkvwxyumdvmbro
+                  example: klxkzaifxizjnkqsmyd
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jlcxmvrzkjxhzsop
+                  example: nktrav
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
     delete:
       summary: 'DELETE User Address'
       operationId: dELETEUserAddress
@@ -3372,11 +3372,11 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: illo
+                  example: et
                 image_url:
                   type: string
                   description: ''
-                  example: quae
+                  example: possimus
                 default:
                   type: boolean
                   description: ''
@@ -3642,7 +3642,7 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: ut
+                  example: quidem
                 order_annuled:
                   type: boolean
                   description: ''
@@ -3654,7 +3654,7 @@ paths:
                 total_amount:
                   type: number
                   description: ''
-                  example: 88917418.6276
+                  example: 402.341
                 paid:
                   type: boolean
                   description: ''
@@ -3718,7 +3718,7 @@ paths:
                 order_annuled:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 delivered:
                   type: boolean
                   description: ''
@@ -3726,11 +3726,11 @@ paths:
                 total_amount:
                   type: number
                   description: ''
-                  example: 2175.82
+                  example: 60.72569318
                 paid:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
     delete:
       summary: 'DELETE Order'
       operationId: dELETEOrder
@@ -3801,23 +3801,23 @@ paths:
                 meal_id:
                   type: string
                   description: ''
-                  example: id
+                  example: quaerat
                 order_id:
                   type: string
                   description: ''
-                  example: maxime
+                  example: ut
                 user_id:
                   type: string
                   description: ''
-                  example: accusantium
+                  example: temporibus
                 amount_due:
                   type: number
                   description: ''
-                  example: 2.0
+                  example: 675.47
                 quantity_ordered:
                   type: number
                   description: ''
-                  example: 172.052011
+                  example: 15.0
               required:
                 - meal_id
                 - order_id
@@ -3889,11 +3889,11 @@ paths:
                 amount_due:
                   type: number
                   description: ''
-                  example: 115.71698203
+                  example: 1129983.3820182
                 quantity_ordered:
                   type: number
                   description: ''
-                  example: 18.38
+                  example: 272942869.763
     delete:
       summary: 'DELETE Order Item'
       operationId: dELETEOrderItem
@@ -3964,35 +3964,35 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: voluptate
+                  example: repellendus
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: yedlxsvd
+                  example: arboyiolnrqdoezrmdsw
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: atqbzmmyuonx
+                  example: szdfjvgmkfx
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: h
+                  example: wmondubiwiv
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: svjdfutxd
+                  example: ekhxppeikjqyn
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: jbthbczuq
+                  example: ei
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lzukynrwhqwrxbh
+                  example: gsj
                 default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - user_id
                 - house_number
@@ -4058,31 +4058,31 @@ paths:
                 house_number:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: giuuqddbqjmuqbrqzjyv
+                  example: vcqsj
                 street:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: w
+                  example: mroqusj
                 city:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: nvuiyy
+                  example: vmjevpacefufgiqmmo
                 post_code:
                   type: string
                   description: 'Must not be greater than 25 characters.'
-                  example: rzwdgtlhgdwtlsthsfxy
+                  example: hsacerepp
                 state:
                   type: string
                   description: 'Must not be greater than 75 characters.'
-                  example: rqbbaqtynsxy
+                  example: cfblmsjjnjriwwfopooenn
                 landmark:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: nd
+                  example: dgkxhossfdrpujqhvavcwtvil
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
     delete:
       summary: 'DELETE User Address'
       operationId: dELETEUserAddress
@@ -4153,15 +4153,15 @@ paths:
                 user_id:
                   type: string
                   description: ''
-                  example: et
+                  example: illum
                 image_url:
                   type: string
                   description: ''
-                  example: modi
+                  example: porro
                 default:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
               required:
                 - user_id
                 - image_url
@@ -4226,7 +4226,7 @@ paths:
                 default:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
     delete:
       summary: 'DELETE User Image'
       operationId: dELETEUserImage

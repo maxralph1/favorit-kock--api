@@ -14,7 +14,7 @@ return [
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
      */
-    'description' => '',
+    'description' => 'This is the Documentation to the Favorit-Kock API. <br /><br /> Hier ist die Dokumentation für Favorit-Kock-API.',
 
     /*
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url').
@@ -254,12 +254,13 @@ return [
      * Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
      */
     'intro_text' => <<<INTRO
-This documentation aims to provide all the information you need to work with our API.
+This documentation aims to provide all the information you need to work with the Favorit-Kock API.
+
+Diese Dokumentation enthält alle Informationen, die Sie für die Arbeit mit der Favorit-Kock-API benötigen.
 
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
-INTRO
-    ,
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile). <br /> <br /> Beim Scrollen sehen Sie im dunklen Bereich rechts Codebeispiele für die Arbeit mit der API in verschiedenen Programmiersprachen (oder als Teil des Inhalts auf Mobilgeräten). Sie können die verwendete Sprache mit den Registerkarten oben rechts (oder über das Navigationsmenü oben links auf Mobilgeräten) ändern.</aside>
+INTRO,
 
     /*
      * Example requests for each endpoint will be shown in each of these languages.
